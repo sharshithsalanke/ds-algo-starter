@@ -23,8 +23,18 @@ public class Anagram{
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the word");
         String s=sc.nextLine();
+        while(s.length()<=1){
+            System.out.println("The length of the word should be greater than 1");
+            s=sc.nextLine();
+        }
+        s=s.toLowerCase();
         System.out.println("Enter it's Anagram");
         String t=sc.nextLine();
+        while(t.length() >= (5*10^4)){
+            System.out.println("The length of anagram is too long");
+            t=sc.nextLine();
+        }
+        t=t.toLowerCase();
         System.out.println(isAnagram(s,t));
     }
 }

@@ -9,19 +9,15 @@ public class First_unique{
             int k=i-1;
         while(j<str.length && str[i]!=str[j]){
             j++;
-            n=0;
         }
         while(k>=0 && str[i]!=str[k]){
             k--;
-            n=0;
         }
         if(k>=0 && str[i]==str[k]){
             i++;
-            n=0;
         }
         else if(j<str.length && str[i]==str[j]){
             i++;
-            n=0;
         }
         else{
             System.out.println(i);
@@ -37,7 +33,11 @@ public class First_unique{
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter a Word");
-        String s=sc.next();
+        String s=sc.nextLine();
+        while(s.length()<=1 || s.length()>=(10^5)){
+            System.out.println("The word is too short or too long");
+            s=sc.nextLine();
+        }
         firstunique(s);
     }
 }
