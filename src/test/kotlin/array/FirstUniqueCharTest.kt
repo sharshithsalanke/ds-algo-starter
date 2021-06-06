@@ -10,9 +10,13 @@ class FirstUniqueCharTest : StringSpec({
         forAll(
             row("leetcode", 0),
             row("loveleetcode", 2),
+            row("aaabbbbc",7),
+            row("madam",2),
+            row("hannah",-1),
             row("aabb", -1),
+            row("aaaaaa",-1),
         ) { s, result ->
-            FirstUniqueChar.firstUniqueChar(s) shouldBe result
+            First_Unique.firstUniqueChar(s) shouldBe result
         }
     }
 })
